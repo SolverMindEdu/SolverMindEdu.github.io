@@ -110,6 +110,14 @@ var config_data = `
       "defaultValue": 50,
       "required": "true"
     },
+    { "name": "Driver Skill",
+      "code": "ds",
+      "type": "number",
+      "min": 1,
+      "max": 10,
+      "defaultValue": 5,
+      "required": "true"
+    },
     { "name": "Minor Breakdowns",
       "code": "mb",
       "type": "checkbox",
@@ -128,14 +136,6 @@ var config_data = `
     { "name": "Was defended",
       "code": "wd",
       "type": "checkbox",
-      "required": "true"
-    },
-    { "name": "Driver Skill",
-      "code": "ds",
-      "type": "number",
-      "min": 1,
-      "max": 10,
-      "defaultValue": 5,
       "required": "true"
     },
     { "name": "Quality of Defense/Quality Against Defense",
