@@ -760,13 +760,10 @@ function configure() {
     idx = addElement(tt, idx, element);
   });
 
-  // Configure endgame screen
-  var egc = mydata.endgame;
-  var egt = document.getElementById("endgame_table");
-  idx = 0;
-  egc.forEach(element => {
-    idx = addElement(egt, idx, element);
-  });
+  // Configure endgame screen(Removed)
+if (mydata.endgame && document.getElementById("endgame_table")) {
+  // intentionally left empty since we do not use endgame
+}
 
   // Configure postmatch screen
   pmc = mydata.postmatch;
@@ -874,21 +871,29 @@ function getData(dataFormat) {
 }
 
 function updateQRHeader() {
-  let str = 'Event: !EVENT! Match: !MATCH! Robot: !ROBOT! Team: !TEAM!';
+  const getVal = (id) => {
+    const el = document.getElementById(id);
+    return el ? (el.value ?? el.textContent ?? "") : "";
+  };
 
+  let str;
   if (!pitScouting) {
-    str = str
-      .replace('!EVENT!', document.getElementById("input_e").value)
-      .replace('!MATCH!', document.getElementById("input_m").value)
-      .replace('!ROBOT!', document.getElementById("display_r").value)
-      .replace('!TEAM!', document.getElementById("input_t").value);
+    // safely read the fields
+    const ev = getVal("input_e");
+    const match = getVal("input_m");
+    const robot = getVal("display_r");  // exists only if you have a radio with code "r"
+    const team = getVal("input_t");
+
+    str = `Event: ${ev} Match: ${match} Robot: ${robot} Team: ${team}`;
   } else {
-    str = 'Pit Scouting - Team !TEAM!'
-      .replace('!TEAM!', document.getElementById("input_t").value);
+    const team = getVal("input_t");
+    str = `Pit Scouting - Team ${team}`;
   }
 
-  document.getElementById("display_qr-info").textContent = str;
+  const info = document.getElementById("display_qr-info");
+  if (info) info.textContent = str;
 }
+
 
 
 function qr_regenerate() {
