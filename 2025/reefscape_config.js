@@ -47,7 +47,7 @@ var config_data = `
         "m": "Middle<br>",
         "fp": "Far from Processor"
       },
-      "defaultValue": "m"
+      "defaultValue": "m",
       "required": "true"
     },
     { "name": "Coral L1",
