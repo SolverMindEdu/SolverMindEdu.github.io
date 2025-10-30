@@ -45,7 +45,7 @@ var config_data = `
       "choices": {
         "p": "Close to Processor<br>",
         "m": "Middle<br>",
-        "fp": "Far from Processor",
+        "fp": "Far from Processor"
       },
       "defaultValue": "m"
       "required": "true"
