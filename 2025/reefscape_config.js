@@ -144,24 +144,6 @@ var config_data = `
       "type": "bool"
     }
   ],
-  "endgame": [
-    { "name": "Barge Timer",
-      "code": "ebt",
-      "type": "timer"
-    },
-    { "name": "Final Robot Status",
-      "code": "efs",
-      "type":"radio",
-      "choices": {
-        "bp": "Parked<br>",
-        "ba": "Parked/Failed Climb<br>",
-        "bs": "Shallow Cage<br>",
-        "bd": "Deep Cage<br>",
-        "x": "Not attempted"
-      },
-      "defaultValue": "x"
-    }
-  ],
   "postmatch": [
     { "name": "Attained Coopertition Pt",
       "code": "cop",

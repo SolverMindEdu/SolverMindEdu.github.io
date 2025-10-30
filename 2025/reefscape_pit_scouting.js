@@ -96,8 +96,6 @@ var config_data = `
   ],
   "teleop": [
   ],
-  "endgame": [
-  ],
   "postmatch": [
   ]
 }`;
