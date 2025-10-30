@@ -99,96 +99,84 @@ var config_data = `
     { "name": "Net Score",
       "code": "tns",
       "type": "counter"
-    },
-    { "name": "Pickup From",
-      "code": "tpu",
-      "type": "radio",
-      "choices": {
-        "s": "Coral Station<br>",
-        "f": "Floor<br>",
-        "b": "Both<br>",
-        "x": "Not Attempted"
-      },
-      "defaultValue": "x"
-    },
-    { "name": "Scored in<br>Opponent<br>Processor",
-      "code": "opp",
-      "type": "bool"
     }
   ],
   "postmatch": [
-    { "name": "Attained Coopertition Pt",
-      "code": "cop",
-      "type": "bool"
-    },
-    { "name": "Algae Left in Reef",
-      "code": "alr",
+    { "name": "Vibes Power Index",
+      "code": "vpi",
       "type": "number",
-      "min": 0,
-      "max": 9,
-      "defaultValue": 0
+      "min": 1,
+      "max": 100,
+      "defaultValue": 50,
+      "required": "true"
+    },
+    { "name": "Minor Breakdowns",
+      "code": "mb",
+      "type": "checkbox",
+      "required": "true"
+    },
+    { "name": "Major Breakdowns",
+      "code": "mjb",
+      "type": "checkbox",
+      "required": "true"
+    },
+    { "name": "Played Defense",
+      "code": "pd",
+      "type": "checkbox",
+      "required": "true"
+    },
+    { "name": "Was defended",
+      "code": "wd",
+      "type": "checkbox",
+      "required": "true"
     },
     { "name": "Driver Skill",
       "code": "ds",
-      "type": "radio",
-      "choices": {
-        "n": "Not Effective<br>",
-        "a": "Average<br>",
-        "v": "Very Effective<br>",
-        "x": "Not Observed"
-      },
-      "defaultValue": "x"
+      "type": "number",
+      "min": 1,
+      "max": 10,
+      "defaultValue": 5,
+      "required": "true"
     },
-    { "name": "Defense Rating",
-      "code": "dr",
-      "type": "radio",
-      "choices": {
-        "b": "Below Average<br>",
-        "a": "Average<br>",
-        "g": "Good<br>",
-        "e": "Excellent<br>",
-        "x": "Did not play defense"
-      },
-      "defaultValue": "x"
+    { "name": "Quality of Defense/Quality Against Defense",
+      "code": "qdqad",
+      "type": "text",
+      "size": 25,
+      "maxSize": 100
     },
-    { "name": "Speed Rating",
-      "code": "sr",
-      "type": "radio",
-      "choices": {
-        "1": "1 (slow)<br>",
-        "2": "2<br>",
-        "3": "3<br>",
-        "4": "4<br>",
-        "5": "5 (fast)"
-      },
-      "defaultValue":"3"
+    { "name": "What did they do in auto?",
+      "code": "wda",
+      "type": "text",
+      "size": 25,
+      "maxSize": 100,
+      "required": "true"
     },
-    { "name": "Died/Immobilized",
-      "code": "die",
-      "type": "bool"
+    { "name": "Teleop Playstyle",
+      "tooltip": "preferred intaking locations, preferred scoring locations, driving paths, etc.",
+      "code": "wda",
+      "type": "text",
+      "size": 25,
+      "maxSize": 100,
+      "required": "true"
     },
-    { "name": "Tippy<br>(almost tipped over)",
-      "code": "tip",
-      "type": "bool"
-    },
-    { "name": "Dropped Coral (>2)",
-      "code": "dc",
-      "type": "bool"
-    },
-    { "name": "Dropped Algae (>2)",
-      "code": "da",
-      "type": "bool"
+    { "name": "Reliability",
+      "tooltip": "Describe what broke, nothing broke but looked shaky, very solid, etc.",
+      "code": "reli",
+      "type": "text",
+      "size": 25,
+      "maxSize": 100,
+      "required": "true"
     },
     { "name": "Make good<br>alliance partner?",
       "tooltip": "Would you want this robot on your alliance in eliminations?",
       "code": "all",
       "type": "bool"
     },
-    { "name": "Comments",
+    { "name": "Other Comments",
       "code": "co",
       "type": "text",
       "size": 15,
-      "maxSize": 55
+      "maxSize": 100
     }
   ]
 }`;
