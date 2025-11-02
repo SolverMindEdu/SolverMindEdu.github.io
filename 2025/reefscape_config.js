@@ -43,9 +43,9 @@ var config_data = `
       "code": "as",
       "type": "radio",
       "choices": {
-        "p": "Close to Processor<br>",
-        "m": "Middle<br>",
-        "fp": "Far from Processor"
+        "Processor": "Close to Processor<br>",
+        "Middle": "Middle<br>",
+        "Far": "Far from Processor"
       },
       "defaultValue": "m",
       "required": "true"
@@ -166,11 +166,6 @@ var config_data = `
       "size": 25,
       "maxSize": 100,
       "required": "true"
-    },
-    { "name": "Make good<br>alliance partner?",
-      "tooltip": "Would you want this robot on your alliance in eliminations?",
-      "code": "all",
-      "type": "bool"
     },
     { "name": "Other Comments",
       "code": "co",
