@@ -18,13 +18,6 @@ var config_data = `
       "maxSize": 30,
       "required": "true"
     },
-    { "name": "Team #",
-      "code": "t",
-      "type": "team",
-      "min": 1,
-      "max": 99999,
-      "required": "true"
-    },
       { "name": "Match #",
       "code": "m",
       "type": "match",
@@ -55,6 +48,13 @@ var config_data = `
         "b3": "Blue-3"
       },
       "required":"true"
+    },
+        { "name": "Team #",
+      "code": "t",
+      "type": "team",
+      "min": 1,
+      "max": 99999,
+      "required": "true"
     }
   ],
   "auton": [
@@ -66,7 +66,7 @@ var config_data = `
         "Middle": "Middle<br>",
         "Far": "Far from Processor"
       },
-      "defaultValue": "m",
+      "defaultValue": "Middle",
       "required": "true"
     },
     { "name": "Coral L1",
