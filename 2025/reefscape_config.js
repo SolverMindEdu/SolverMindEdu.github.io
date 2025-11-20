@@ -5,6 +5,23 @@ var config_data = `
   "page_title": "REEFSCAPE",
   "checkboxAs": "10",
   "prematch": [
+    { "name": "Event",
+      "code": "e",
+      "type": "event",
+      "defaultValue": "ONCMP1",
+      "required": "true"
+    },
+    { "name": "Robot",
+      "code": "r",
+      "type": "robot",
+      "choices": {
+        "r1": "Red-1",
+        "b1": "Blue-1<br>",
+        "r2": "Red-2",
+        "b2": "Blue-2<br>",
+        "r3": "Red-3",
+        "b3": "Blue-3"
+    },
     { "name": "Scouter Name",
       "code": "s",
       "type": "scouter",
