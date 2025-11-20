@@ -12,6 +12,20 @@ var config_data = `
       "maxSize": 30,
       "required": "true"
     },
+    { "name": "Team #",
+      "code": "t",
+      "type": "team",
+      "min": 1,
+      "max": 99999,
+      "required": "true"
+    },
+      { "name": "Match #",
+      "code": "m",
+      "type": "match",
+      "min": 1,
+      "max": 150,
+      "required": "true"
+    },
     { "name": "Match Level",
       "code": "l",
       "type": "level",
@@ -22,19 +36,6 @@ var config_data = `
       },
       "defaultValue": "qm",
       "required": "true"
-    },
-    { "name": "Match #",
-      "code": "m",
-      "type": "match",
-      "min": 1,
-      "max": 150,
-      "required": "true"
-    },
-    { "name": "Team #",
-      "code": "t",
-      "type": "team",
-      "min": 1,
-      "max": 99999,
     }
   ],
   "auton": [
