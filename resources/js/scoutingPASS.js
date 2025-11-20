@@ -2,7 +2,7 @@
 //
 // The guts of the ScountingPASS application
 // Written by Team 2451 - PWNAGE
-
+var skipValidation = false;
 document.addEventListener("touchstart", startTouch, false);
 document.addEventListener("touchend", moveTouch, false);
 
@@ -796,26 +796,31 @@ return document.forms.scoutingForm.l.value
 
 
 function validateData() {
+  if (skipValidation) {
+    return true;
+  }
+
   var ret = true;
   var errStr = "";
   for (rf of requiredFields) {
     var thisRF = document.forms.scoutingForm[rf];
-	if (thisRF.value == "[]" || thisRF.value.length == 0) {
-	  if (rf == "as") {
-		rftitle = "Auto Start Position"
-	  } else {
-		thisInputEl = thisRF instanceof RadioNodeList ? thisRF[0] : thisRF;
-		rftitle = thisInputEl.parentElement.parentElement.children[0].innerHTML.replace("&nbsp;","");
-	  }
-	  errStr += rf + ": " + rftitle + "\n";
-	  ret = false;
-	}
+    if (thisRF.value == "[]" || thisRF.value.length == 0) {
+      if (rf == "as") {
+        rftitle = "Auto Start Position"
+      } else {
+        thisInputEl = thisRF instanceof RadioNodeList ? thisRF[0] : thisRF;
+        rftitle = thisInputEl.parentElement.parentElement.children[0].innerHTML.replace("&nbsp;","");
+      }
+      errStr += rf + ": " + rftitle + "\n";
+      ret = false;
+    }
   }
   if (ret == false) {
     alert("Enter all required values\n" + errStr);
   }
   return ret
 }
+
 
 function getData(dataFormat) {
   var Form = document.forms.scoutingForm;
@@ -923,6 +928,8 @@ function clearForm() {
   var match = 0;
   var e = 0;
 
+  skipValidation = true;   // disable validation for this swipe
+
   if (pitScouting) {
     swipePage(-1);
   } else {
@@ -938,6 +945,8 @@ function clearForm() {
 
     // Robot
     resetRobot()
+
+  skipValidation = false;  // turn validation back on
   }
 
   // Clear XY coordinates
