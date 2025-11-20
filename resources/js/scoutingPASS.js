@@ -2,7 +2,7 @@
 //
 // The guts of the ScountingPASS application
 // Written by Team 2451 - PWNAGE
-
+var skipValidation = false;
 document.addEventListener("touchstart", startTouch, false);
 document.addEventListener("touchend", moveTouch, false);
 
@@ -146,6 +146,30 @@ function addTimer(table, idx, name, data) {
   }
 
   return idx + 1;
+}
+
+function goToSlide(targetIndex) {
+  var holder = document.getElementById("main-panel-holder");
+  if (!holder) return;
+
+  var slides = holder.children;
+  if (targetIndex < 0 || targetIndex >= slides.length) return;
+
+  // hide current slide
+  slides[slide].style.display = "none";
+
+  // set new slide index
+  slide = targetIndex;
+
+  // show new slide
+  window.scrollTo(0, 0);
+  slides[slide].style.display = "table";
+
+  // reset data display on QR page
+  var dataDiv = document.getElementById("data");
+  if (dataDiv) dataDiv.innerHTML = "";
+  var copyBtn = document.getElementById("copyButton");
+  if (copyBtn) copyBtn.setAttribute("value", "Copy Data");
 }
 
 function addCounter(table, idx, name, data) {
@@ -796,26 +820,31 @@ return document.forms.scoutingForm.l.value
 
 
 function validateData() {
+  if (skipValidation) {
+    return true;
+  }
+
   var ret = true;
   var errStr = "";
   for (rf of requiredFields) {
     var thisRF = document.forms.scoutingForm[rf];
-	if (thisRF.value == "[]" || thisRF.value.length == 0) {
-	  if (rf == "as") {
-		rftitle = "Auto Start Position"
-	  } else {
-		thisInputEl = thisRF instanceof RadioNodeList ? thisRF[0] : thisRF;
-		rftitle = thisInputEl.parentElement.parentElement.children[0].innerHTML.replace("&nbsp;","");
-	  }
-	  errStr += rf + ": " + rftitle + "\n";
-	  ret = false;
-	}
+    if (thisRF.value == "[]" || thisRF.value.length == 0) {
+      if (rf == "as") {
+        rftitle = "Auto Start Position"
+      } else {
+        thisInputEl = thisRF instanceof RadioNodeList ? thisRF[0] : thisRF;
+        rftitle = thisInputEl.parentElement.parentElement.children[0].innerHTML.replace("&nbsp;","");
+      }
+      errStr += rf + ": " + rftitle + "\n";
+      ret = false;
+    }
   }
   if (ret == false) {
     alert("Enter all required values\n" + errStr);
   }
   return ret
 }
+
 
 function getData(dataFormat) {
   var Form = document.forms.scoutingForm;
@@ -924,20 +953,22 @@ function clearForm() {
   var e = 0;
 
   if (pitScouting) {
-    swipePage(-1);
+    // whatever slide index you use for pit, often 0
+    goToSlide(0);
   } else {
-    swipePage(-5);
+    // send back to prematch page, usually slide 0
+    goToSlide(0);
 
     // Increment match
-    match = parseInt(document.getElementById("input_m").value)
-    if (match == NaN) {
-      document.getElementById("input_m").value = ""
+    match = parseInt(document.getElementById("input_m").value);
+    if (isNaN(match)) {
+      document.getElementById("input_m").value = "";
     } else {
-      document.getElementById("input_m").value = match + 1
+      document.getElementById("input_m").value = match + 1;
     }
 
     // Robot
-    resetRobot()
+    resetRobot();
   }
 
   // Clear XY coordinates
