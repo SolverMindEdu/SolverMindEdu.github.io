@@ -148,6 +148,30 @@ function addTimer(table, idx, name, data) {
   return idx + 1;
 }
 
+function goToSlide(targetIndex) {
+  var holder = document.getElementById("main-panel-holder");
+  if (!holder) return;
+
+  var slides = holder.children;
+  if (targetIndex < 0 || targetIndex >= slides.length) return;
+
+  // hide current slide
+  slides[slide].style.display = "none";
+
+  // set new slide index
+  slide = targetIndex;
+
+  // show new slide
+  window.scrollTo(0, 0);
+  slides[slide].style.display = "table";
+
+  // reset data display on QR page
+  var dataDiv = document.getElementById("data");
+  if (dataDiv) dataDiv.innerHTML = "";
+  var copyBtn = document.getElementById("copyButton");
+  if (copyBtn) copyBtn.setAttribute("value", "Copy Data");
+}
+
 function addCounter(table, idx, name, data) {
   var row = table.insertRow(idx);
   var cell1 = row.insertCell(0);
@@ -928,25 +952,23 @@ function clearForm() {
   var match = 0;
   var e = 0;
 
-  skipValidation = true;   // disable validation for this swipe
-
   if (pitScouting) {
-    swipePage(-1);
+    // whatever slide index you use for pit, often 0
+    goToSlide(0);
   } else {
-    swipePage(-5);
+    // send back to prematch page, usually slide 0
+    goToSlide(0);
 
     // Increment match
-    match = parseInt(document.getElementById("input_m").value)
-    if (match == NaN) {
-      document.getElementById("input_m").value = ""
+    match = parseInt(document.getElementById("input_m").value);
+    if (isNaN(match)) {
+      document.getElementById("input_m").value = "";
     } else {
-      document.getElementById("input_m").value = match + 1
+      document.getElementById("input_m").value = match + 1;
     }
 
     // Robot
-    resetRobot()
-
-  skipValidation = false;  // turn validation back on
+    resetRobot();
   }
 
   // Clear XY coordinates
