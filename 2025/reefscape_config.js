@@ -8,7 +8,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2025oncmp1",
+      "defaultValue": "oncmp1",
       "required": "true"
     },
     { "name": "Scouter Name",
