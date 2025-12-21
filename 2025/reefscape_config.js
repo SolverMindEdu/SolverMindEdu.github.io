@@ -8,7 +8,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "MILSTEIN",
+      "defaultValue": "2025ONCMP2",
       "required": "true"
     },
     { "name": "Scouter Name",
