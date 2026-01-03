@@ -137,16 +137,6 @@ var config_data = `
       "defaultValue": 5,
       "required": "true"
     },
-    { "name": "Minor Breakdowns",
-      "code": "mb",
-      "type": "checkbox",
-      "required": "true"
-    },
-    { "name": "Major Breakdowns",
-      "code": "mjb",
-      "type": "checkbox",
-      "required": "true"
-    },
     { "name": "Played Defense",
       "code": "pd",
       "type": "checkbox",
@@ -172,7 +162,7 @@ var config_data = `
     },
     { "name": "Teleop Playstyle",
       "tooltip": "preferred intaking locations, preferred scoring locations, driving paths, etc.",
-      "code": "wda",
+      "code": "wdt",
       "type": "text",
       "size": 25,
       "maxSize": 100,
