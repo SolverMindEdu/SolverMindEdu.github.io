@@ -110,7 +110,7 @@ var config_data = `
     { "name": "Trench Crosses",
       "code": "bps",
       "type": "counter"
-    }
+    },
     { "name": "Defended at: BUMP?",
       "code": "actbump",
       "type": "checkbox",
