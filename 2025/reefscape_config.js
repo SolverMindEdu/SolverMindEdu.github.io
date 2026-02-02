@@ -1,14 +1,14 @@
 var config_data = `
 {
   "dataFormat": "tsv",
-  "title": "Scouting PASS 2025",
-  "page_title": "REEFSCAPE",
+  "title": "Scouting PASS 2026",
+  "page_title": "REBUILT",
   "checkboxAs": "10",
   "prematch": [
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2025ONCMP2",
+      "defaultValue": "",
       "required": "true"
     },
     { "name": "Scouter Name",
@@ -62,62 +62,96 @@ var config_data = `
       "code": "as",
       "type": "radio",
       "choices": {
-        "Processor": "Close to Processor<br>",
+        "Depot": "Close to Depot<br>",
         "Middle": "Middle<br>",
-        "Far": "Far from Processor"
+        "Outpost": "Close to Outpost"
       },
       "defaultValue": "Middle",
       "required": "true"
     },
-    { "name": "Coral L1",
+    { "name": "# Scores",
       "code": "ac1",
       "type": "counter"
     },
-    { "name": "Coral L2",
+    { "name": "Passes from Middle",
       "code": "ac2",
       "type": "counter"
     },
-    { "name": "Coral L3",
+    { "name": "Passes from Far",
       "code": "ac3",
       "type": "counter"
     },
-    { "name": "Coral L4",
+    { "name": "Bump Crosses",
       "code": "ac4",
       "type": "counter"
     },
-    { "name": "Processor Score",
+    { "name": "Trench Crosses",
       "code": "aps",
-      "type": "counter"
-    },
-    { "name": "Net Score",
-      "code": "ans",
       "type": "counter"
     }
   ],
-  "teleop": [
-    { "name": "Coral L1",
-      "code": "tc1",
+  "ACTIVATED": [
+    { "name": "# Scores",
+      "code": "bc1",
+      "type": "counter"
+    }, 
+    { "name": "Passes from Middle",
+      "code": "bc2",
       "type": "counter"
     },
-    { "name": "Coral L2",
-      "code": "tc2",
+    { "name": "Passes from Far",
+      "code": "bc3",
       "type": "counter"
     },
-    { "name": "Coral L3",
-      "code": "tc3",
+    { "name": "Bump Crosses",
+      "code": "bc4",
       "type": "counter"
     },
-    { "name": "Coral L4",
-      "code": "tc4",
+    { "name": "Trench Crosses",
+      "code": "bps",
+      "type": "counter"
+    }
+    { "name": "Defended at: BUMP?",
+      "code": "actbump",
+      "type": "checkbox",
+    },
+    { "name": "Defended at: TRENCH?",
+      "code": "acttrench",
+      "type": "checkbox",
+    },
+    { "name": "Defended at: NEUTRAL ZONE?",
+      "code": "actneutral",
+      "type": "checkbox",
+    },
+    { "name": "TAREGETTED by defense?",
+      "code": "acttarget",
+      "type": "checkbox",
+    }
+  ],
+    "DEACTIVATED": [
+    { "name": "Passes from Middle",
+      "code": "cc2",
       "type": "counter"
     },
-    { "name": "Processor Score",
-      "code": "tps",
+    { "name": "Passes from Far",
+      "code": "cc3",
       "type": "counter"
     },
-    { "name": "Net Score",
-      "code": "tns",
-      "type": "counter"
+    { "name": "Played defense at: BUMP?",
+      "code": "inactbump",
+      "type": "checkbox",
+    },
+    { "name": "Played defense at: TRENCH?",
+      "code": "inacttrench",
+      "type": "checkbox",
+    },
+    { "name": "Played defense at: NEUTRAL ZONE?",
+      "code": "inactneutral",
+      "type": "checkbox",
+    },
+    { "name": "TAREGETING specfic bot?",
+      "code": "inacttarget",
+      "type": "checkbox",
     }
   ],
   "postmatch": [
@@ -129,29 +163,61 @@ var config_data = `
       "defaultValue": 50,
       "required": "true"
     },
-    { "name": "Driver Skill",
+    { "name": "Intake Quality",
+      "code": "as",
+      "type": "radio",
+      "choices": {
+        "Low": "Low<br>",
+        "Average": "Average<br>",
+        "High": "High"
+    },
+    { "name": "Accuracy (1-5)",
       "code": "ds",
       "type": "number",
       "min": 1,
-      "max": 10,
-      "defaultValue": 5,
+      "max": 5,
+      "defaultValue": 1,
       "required": "true"
     },
-    { "name": "Played Defense",
-      "code": "pd",
+    { "name": "SCORING LOCATION: Hub?",
+      "code": "hub",
       "type": "checkbox",
       "required": "true"
     },
-    { "name": "Was defended",
-      "code": "wd",
+    { "name": "SCORING LOCATION: Tower?",
+      "code": "tower",
       "type": "checkbox",
       "required": "true"
     },
-    { "name": "Quality of Defense/Quality Against Defense",
-      "code": "qdqad",
-      "type": "text",
-      "size": 25,
-      "maxSize": 100
+    { "name": "SCORING LOCATION: Far Corner?",
+      "code": "corner",
+      "type": "checkbox",
+      "required": "true"
+    },
+    { "name": "SCORING LOCATION: Other",
+      "code": "locother",
+      "type": "checkbox",
+      "required": "true"
+    },
+    { "name": "PLAYSTYLE: Cleanup Bot?",
+      "code": "clean",
+      "type": "checkbox",
+      "required": "true"
+    },
+    { "name": "PLAYSTYLE: Passing Bot?",
+      "code": "passing",
+      "type": "checkbox",
+      "required": "true"
+    },
+    { "name": "PLAYSTYLE: Full Field Cycler?",
+      "code": "fullfield",
+      "type": "checkbox",
+      "required": "true"
+    },
+    { "name": "PLAYSTYLE: Other",
+      "code": "playother",
+      "type": "checkbox",
+      "required": "true"
     },
     { "name": "What did they do in auto?",
       "code": "wda",
@@ -160,7 +226,7 @@ var config_data = `
       "maxSize": 100,
       "required": "true"
     },
-    { "name": "Teleop Playstyle",
+    { "name": "Playstyle",
       "tooltip": "preferred intaking locations, preferred scoring locations, driving paths, etc.",
       "code": "wdt",
       "type": "text",
@@ -169,18 +235,26 @@ var config_data = `
       "required": "true"
     },
     { "name": "Reliability",
-      "tooltip": "Describe what broke, nothing broke but looked shaky, very solid, etc.",
+      "tooltip": "Describe what broke, nothing broke but looked shaky, very solid, etc. PLUS opnions on the effectiveness of their mechanisms.",
       "code": "reli",
       "type": "text",
       "size": 25,
       "maxSize": 100,
       "required": "true"
     },
-    { "name": "Other Comments",
+    { "name": "Drive Quality",
+      "tooltip": "Beached? Quality of Defense? Penalties?",
+      "code": "driveq",
+      "type": "text",
+      "size": 25,
+      "maxSize": 100,
+      "required": "true"
+    },
+    { "name": "Silly Comments",
       "code": "co",
       "type": "text",
-      "size": 15,
-      "maxSize": 100
+      "size": 30,
+      "maxSize": 1000
     }
   ]
 }`;
