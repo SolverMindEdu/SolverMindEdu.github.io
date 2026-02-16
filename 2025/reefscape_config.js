@@ -146,7 +146,7 @@ var config_data = `
       "type": "number",
       "min": 1,
       "max": 5,
-      "defaultValue": 1,
+      "defaultValue": 3,
       "required": "true"
     },
     { "name": "SCORING LOCATION Tower?",
