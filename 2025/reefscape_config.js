@@ -103,6 +103,10 @@ var config_data = `
       "code": "tc4",
       "type": "counter"
     }
+    { "name": "INACTIVE bump crosses",
+      "code": "tc5",
+      "type": "counter"
+    }
   ],
   "postmatch": [
     { "name": "Vibes Power Index",
