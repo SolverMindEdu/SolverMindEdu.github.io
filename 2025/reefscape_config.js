@@ -171,13 +171,6 @@ var config_data = `
       "type": "checkbox",
       "required": "true"
     },
-    { "name": "What did they do in auto?",
-      "code": "wdi",
-      "type": "text",
-      "size": 25,
-      "maxSize": 100,
-      "required": "true"
-    },
     { "name": "Teleop Playstyle",
       "tooltip": "preferred intaking locations, preferred scoring locations, driving paths, etc.",
       "code": "wdt",
