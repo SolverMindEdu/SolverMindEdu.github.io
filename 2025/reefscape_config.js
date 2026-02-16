@@ -106,6 +106,10 @@ var config_data = `
     { "name": "INACTIVE bump crosses",
       "code": "tc5",
       "type": "counter"
+    },
+    { "name": "INACTIVE trench crosses",
+      "code": "tc6",
+      "type": "counter"
     }
   ],
   "postmatch": [
