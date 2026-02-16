@@ -102,7 +102,7 @@ var config_data = `
     { "name": "ACTIVE bump crosses",
       "code": "tc4",
       "type": "counter"
-    }
+    },
     { "name": "INACTIVE bump crosses",
       "code": "tc5",
       "type": "counter"
