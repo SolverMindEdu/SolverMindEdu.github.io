@@ -141,14 +141,6 @@ var config_data = `
         "Average": "Average<br>",
         "High": "High"
     },
-    { "name": "Accuracy",
-      "code": "acy",
-      "type": "number",
-      "min": 1,
-      "max": 5,
-      "defaultValue": 3,
-      "required": "true"
-    },
     { "name": "SCORING LOCATION Tower?",
       "code": "tow",
       "type": "checkbox",
