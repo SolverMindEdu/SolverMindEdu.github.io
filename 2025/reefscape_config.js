@@ -102,26 +102,6 @@ var config_data = `
     { "name": "ACTIVE bump crosses",
       "code": "tc4",
       "type": "counter"
-    },
-    { "name": "ACTIVE trench crosses",
-      "code": "tps",
-      "type": "counter"
-    },
-    { "name": "ACTIVE | Defended at BUMP?",
-      "code": "actbump",
-      "type": "checkbox",
-    },
-    { "name": "ACTIVE | Defended at Trench?",
-      "code": "actrench",
-      "type": "checkbox",
-    },
-    { "name": "Defended at NEUTRAL ZONE?",
-      "code": "actneutral",
-      "type": "checkbox",
-    },
-    { "name": "TAREGETTED by defense?",
-      "code": "actarget",
-      "type": "checkbox",
     }
   ],
   "postmatch": [
