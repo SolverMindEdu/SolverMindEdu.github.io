@@ -107,14 +107,14 @@ var config_data = `
       "code": "tc5",
       "type": "counter"
     },
-    { "name": "INACTIVE passes from middle",
+    { "name": "INACTIVE passes middle",
       "code": "tc6",
       "type": "counter"
     },
     { "name": "INACTIVE passes from far",
       "code": "tc7",
       "type": "counter"
-    }
+    },
     { "name": "INACTIVE bump crosses",
       "code": "tc8",
       "type": "counter"
