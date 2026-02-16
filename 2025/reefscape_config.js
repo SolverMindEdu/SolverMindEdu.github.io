@@ -110,19 +110,19 @@ var config_data = `
     { "name": "ACTIVE | Defended at BUMP?",
       "code": "actbump",
       "type": "checkbox",
-      },
+    },
     { "name": "ACTIVE | Defended at Trench?",
       "code": "actrench",
       "type": "checkbox",
-      },
+    },
     { "name": "Defended at NEUTRAL ZONE?",
       "code": "actneutral",
       "type": "checkbox",
-      },
+    },
     { "name": "TAREGETTED by defense?",
       "code": "actarget",
       "type": "checkbox",
-      }
+    }
   ],
   "postmatch": [
     { "name": "Vibes Power Index",
