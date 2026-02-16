@@ -62,62 +62,66 @@ var config_data = `
       "code": "as",
       "type": "radio",
       "choices": {
-        "Processor": "Close to Processor<br>",
+        "Processor": "Close to Depot<br>",
         "Middle": "Middle<br>",
-        "Far": "Far from Processor"
+        "Far": "Close to Outpost"
       },
       "defaultValue": "Middle",
       "required": "true"
     },
-    { "name": "Coral L1",
+    { "name": "# Scores",
       "code": "ac1",
       "type": "counter"
     },
-    { "name": "Coral L2",
+    { "name": "Passes from Middle",
       "code": "ac2",
       "type": "counter"
     },
-    { "name": "Coral L3",
+    { "name": "Bump Crosses",
       "code": "ac3",
       "type": "counter"
     },
-    { "name": "Coral L4",
+    { "name": "Trench Crosses",
       "code": "ac4",
-      "type": "counter"
-    },
-    { "name": "Processor Score",
-      "code": "aps",
-      "type": "counter"
-    },
-    { "name": "Net Score",
-      "code": "ans",
       "type": "counter"
     }
   ],
   "teleop": [
-    { "name": "Coral L1",
+    { "name": "ACTIVE scores",
       "code": "tc1",
       "type": "counter"
     },
-    { "name": "Coral L2",
+    { "name": "ACTIVE passes from middle",
       "code": "tc2",
       "type": "counter"
     },
-    { "name": "Coral L3",
+    { "name": "ACTIVE passes from far",
       "code": "tc3",
       "type": "counter"
     },
-    { "name": "Coral L4",
+    { "name": "ACTIVE bump crosses",
       "code": "tc4",
       "type": "counter"
     },
-    { "name": "Processor Score",
+    { "name": "ACTIVE trench crosses",
       "code": "tps",
       "type": "counter"
     },
-    { "name": "Net Score",
-      "code": "tns",
-      "type": "counter"
+    { "name": "ACTIVE | Defended at BUMP?",
+      "code": "actbump",
+      "type": "checkbox",
+    },
+    { "name": "ACTIVE | Defended at Trench?",
+      "code": "actbump",
+      "type": "checkbox",
+    },
+    { "name": "Defended at NEUTRAL ZONE?",
+      "code": "actneutral",
+      "type": "checkbox",
+    },
+    { "name": "TAREGETTED by defense?",
+      "code": "acttarget",
+      "type": "checkbox",
     }
   ],
   "postmatch": [
