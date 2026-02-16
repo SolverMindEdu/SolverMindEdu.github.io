@@ -103,12 +103,24 @@ var config_data = `
       "code": "tc4",
       "type": "counter"
     },
-    { "name": "INACTIVE bump crosses",
+    { "name": "ACTIVE trench crosses",
       "code": "tc5",
       "type": "counter"
     },
-    { "name": "INACTIVE trench crosses",
+    { "name": "INACTIVE passes from middle",
       "code": "tc6",
+      "type": "counter"
+    },
+    { "name": "INACTIVE passes from far",
+      "code": "tc7",
+      "type": "counter"
+    }
+    { "name": "INACTIVE bump crosses",
+      "code": "tc8",
+      "type": "counter"
+    },
+    { "name": "INACTIVE trench crosses",
+      "code": "tc9",
       "type": "counter"
     }
   ],
@@ -121,32 +133,54 @@ var config_data = `
       "defaultValue": 50,
       "required": "true"
     },
-    { "name": "Driver Skill",
-      "code": "ds",
+    { "name": "Intake Quality",
+      "code": "is",
+      "type": "radio",
+      "choices": {
+        "Low": "Low<br>",
+        "Average": "Average<br>",
+        "High": "High"
+    },
+    { "name": "Accuracy",
+      "code": "acy",
       "type": "number",
       "min": 1,
-      "max": 10,
-      "defaultValue": 5,
+      "max": 5,
+      "defaultValue": 1,
       "required": "true"
     },
-     { "name": "Played Defense",
-      "code": "pd",
+    { "name": "SCORING LOCATION Tower?",
+      "code": "tow",
       "type": "checkbox",
       "required": "true"
     },
-    { "name": "Was defended",
-      "code": "wd",
+    { "name": "SCORING LOCATION Far Corner?",
+      "code": "cor",
       "type": "checkbox",
       "required": "true"
     },
-    { "name": "Quality of Defense/Quality Against Defense",
-      "code": "qdqad",
-      "type": "text",
-      "size": 25,
-      "maxSize": 100
+    { "name": "SCORING LOCATION Other?",
+      "code": "oth",
+      "type": "checkbox",
+      "required": "true"
+    },
+    { "name": "PLAYSTYLE Cleanup Bot?",
+      "code": "clean",
+      "type": "checkbox",
+      "required": "true"
+    },
+    { "name": "PLAYSTYLE Passing Bot?",
+      "code": "passing",
+      "type": "checkbox",
+      "required": "true"
+    },
+    { "name": "PLAYSTYLE Full Field Cycler?",
+      "code": "fullfield",
+      "type": "checkbox",
+      "required": "true"
     },
     { "name": "What did they do in auto?",
-      "code": "wda",
+      "code": "wdi",
       "type": "text",
       "size": 25,
       "maxSize": 100,
@@ -162,13 +196,21 @@ var config_data = `
     },
     { "name": "Reliability",
       "tooltip": "Describe what broke, nothing broke but looked shaky, very solid, etc.",
-      "code": "reli",
+      "code": "rel",
       "type": "text",
       "size": 25,
       "maxSize": 100,
       "required": "true"
     },
-    { "name": "Other Comments",
+    { "name": "Drive Quality",
+      "tooltip": "Beached? Quality of Defense? Penalties?",
+      "code": "drq",
+      "type": "text",
+      "size": 25,
+      "maxSize": 100,
+      "required": "true"
+    },
+    { "name": "Silly Comments",
       "code": "co",
       "type": "text",
       "size": 15,
