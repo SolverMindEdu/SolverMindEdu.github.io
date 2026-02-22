@@ -228,7 +228,7 @@ var config_data = `
       "code": "co",
       "type": "text",
       "size": 50,
-      "maxSize": 250
+      "maxSize": 250,
       "required": "true"
     }
   ]
