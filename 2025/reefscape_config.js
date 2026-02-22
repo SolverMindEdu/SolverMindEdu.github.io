@@ -140,6 +140,7 @@ var config_data = `
         "Low": "Low<br>",
         "Average": "Average<br>",
         "High": "High"
+      }
     },
     { "name": "SCORING LOCATION Tower?",
       "code": "tow",
