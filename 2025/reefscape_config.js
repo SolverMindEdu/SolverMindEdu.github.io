@@ -137,7 +137,7 @@ var config_data = `
         "0.6": "0.6<br>",
         "0.8": "0.8<br>",
         "1": "1"
-      }
+      },
       "required": "true"
     },
     { "name": "Intake Quality",
@@ -147,7 +147,7 @@ var config_data = `
         "Low": "Low<br>",
         "Average": "Average<br>",
         "High": "High"
-      }
+      },
       "required": "true"
     },
     { "name": "SCORING LOCATION Hub?",
