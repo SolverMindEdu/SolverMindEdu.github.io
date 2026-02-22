@@ -190,8 +190,8 @@ var config_data = `
       "type": "checkbox",
       "required": "true"
     },
-    { "name": "PLAYSTYLE Full Other (describe in comments)?",
-      "code": "fullfield",
+    { "name": "PLAYSTYLE  Other (describe in comments)?",
+      "code": "otherplay",
       "type": "checkbox",
       "required": "true"
     },
