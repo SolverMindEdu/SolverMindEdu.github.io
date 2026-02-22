@@ -191,7 +191,7 @@ var config_data = `
       "required": "true"
     },
     { "name": "PLAYSTYLE  Other (describe in comments)?",
-      "code": "otherplay",
+      "code": "otherpla",
       "type": "checkbox",
       "required": "true"
     },
@@ -225,7 +225,7 @@ var config_data = `
       "required": "true"
     },
     { "name": "Silly Comments",
-      "code": "co",
+      "code": "silly",
       "type": "text",
       "size": 50,
       "maxSize": 250,
