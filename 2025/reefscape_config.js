@@ -25,7 +25,7 @@ var config_data = `
       "max": 150,
       "required": "true"
     },
-    { "name": "Match Level",
+    { "name": "Match Type",
       "code": "l",
       "type": "level",
       "choices": {
@@ -36,7 +36,7 @@ var config_data = `
       "defaultValue": "qm",
       "required": "true"
     },
-        { "name": "Robot",
+        { "name": "Driver Station Pos.",
       "code": "r",
       "type": "robot",
       "choices": {
@@ -58,17 +58,6 @@ var config_data = `
     }
   ],
   "auton": [
-    { "name": "Auto Start Position",
-      "code": "as",
-      "type": "radio",
-      "choices": {
-        "Processor": "Close to Depot<br>",
-        "Middle": "Middle<br>",
-        "Far": "Close to Outpost"
-      },
-      "defaultValue": "Middle",
-      "required": "true"
-    },
     { "name": "# Scores",
       "code": "ac1",
       "type": "counter"
@@ -133,6 +122,23 @@ var config_data = `
       "defaultValue": 50,
       "required": "true"
     },
+    { "name": "Broke?",
+      "code": "broke",
+      "type": "checkbox",
+      "required": "true"
+    },
+    { "name": "Accuracy?",
+      "code": "accu",
+      "type": "radio",
+      "choices": {
+        "0": "0<br>",
+        "0.2": "0.2<br>",
+        "0.4": "0.4<br>",
+        "0.6": "0.6<br>",
+        "0.8": "0.8<br>",
+        "1": "1"
+      }
+    },
     { "name": "Intake Quality",
       "code": "is",
       "type": "radio",
@@ -142,6 +148,11 @@ var config_data = `
         "High": "High"
       }
     },
+    { "name": "SCORING LOCATION Hub?",
+      "code": "huby",
+      "type": "checkbox",
+      "required": "true"
+    },
     { "name": "SCORING LOCATION Tower?",
       "code": "tow",
       "type": "checkbox",
@@ -149,6 +160,11 @@ var config_data = `
     },
     { "name": "SCORING LOCATION Far Corner?",
       "code": "cor",
+      "type": "checkbox",
+      "required": "true"
+    },
+    { "name": "SCORING LOCATION Trench?",
+      "code": "tret",
       "type": "checkbox",
       "required": "true"
     },
@@ -172,35 +188,40 @@ var config_data = `
       "type": "checkbox",
       "required": "true"
     },
+    { "name": "PLAYSTYLE Full Other (describe in comments)?",
+      "code": "fullfield",
+      "type": "checkbox",
+      "required": "true"
+    },
     { "name": "Teleop Playstyle",
       "tooltip": "preferred intaking locations, preferred scoring locations, driving paths, etc.",
       "code": "wdt",
       "type": "text",
-      "size": 25,
-      "maxSize": 100,
+      "size": 50,
+      "maxSize": 250,
       "required": "true"
     },
     { "name": "Reliability",
       "tooltip": "Describe what broke, nothing broke but looked shaky, very solid, etc.",
       "code": "rel",
       "type": "text",
-      "size": 25,
-      "maxSize": 100,
+      "size": 50,
+      "maxSize": 250,
       "required": "true"
     },
     { "name": "Drive Quality",
       "tooltip": "Beached? Quality of Defense? Penalties?",
       "code": "drq",
       "type": "text",
-      "size": 25,
-      "maxSize": 100,
+      "size": 50,
+      "maxSize": 250,
       "required": "true"
     },
     { "name": "Silly Comments",
       "code": "co",
       "type": "text",
-      "size": 15,
-      "maxSize": 100
+      "size": 50,
+      "maxSize": 250
     }
   ]
 }`;
