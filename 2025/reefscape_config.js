@@ -138,6 +138,7 @@ var config_data = `
         "0.8": "0.8<br>",
         "1": "1"
       }
+      "required": "true"
     },
     { "name": "Intake Quality",
       "code": "is",
@@ -147,6 +148,7 @@ var config_data = `
         "Average": "Average<br>",
         "High": "High"
       }
+      "required": "true"
     },
     { "name": "SCORING LOCATION Hub?",
       "code": "huby",
@@ -193,6 +195,11 @@ var config_data = `
       "type": "checkbox",
       "required": "true"
     },
+    { "name": "PLAYSTYLE Defense?",
+      "code": "defbot",
+      "type": "checkbox",
+      "required": "true"
+    },
     { "name": "Teleop Playstyle",
       "tooltip": "preferred intaking locations, preferred scoring locations, driving paths, etc.",
       "code": "wdt",
@@ -222,6 +229,7 @@ var config_data = `
       "type": "text",
       "size": 50,
       "maxSize": 250
+      "required": "true"
     }
   ]
 }`;
