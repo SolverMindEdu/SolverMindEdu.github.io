@@ -8,7 +8,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2025ONCMP2",
+      "defaultValue": "2025BCVI",
       "required": "true"
     },
     { "name": "Scouter Name",
@@ -58,21 +58,12 @@ var config_data = `
     }
   ],
   "auton": [
-    { "name": "# Scores",
-      "code": "ac1",
-      "type": "counter"
-    },
-    { "name": "Passes from Middle",
-      "code": "ac2",
-      "type": "counter"
-    },
-    { "name": "Bump Crosses",
-      "code": "ac3",
-      "type": "counter"
-    },
-    { "name": "Trench Crosses",
-      "code": "ac4",
-      "type": "counter"
+    { "name": "What Happened in Auto? Briefly tell us their path and the effectiveness",
+      "tooltip": "preferred intaking locations, preferred scoring locations, driving paths, etc.",
+      "code": "auto",
+      "type": "text",
+      "size": 50,
+      "maxSize": 250,
     }
   ],
   "teleop": [
@@ -190,13 +181,13 @@ var config_data = `
       "type": "checkbox",
       "required": "true"
     },
-    { "name": "PLAYSTYLE  Other (describe in comments)?",
-      "code": "otherpla",
+    { "name": "PLAYSTYLE Defense?",
+      "code": "defbot",
       "type": "checkbox",
       "required": "true"
     },
-    { "name": "PLAYSTYLE Defense?",
-      "code": "defbot",
+    { "name": "PLAYSTYLE  Other (describe in comments)?",
+      "code": "otherpla",
       "type": "checkbox",
       "required": "true"
     },
