@@ -64,6 +64,7 @@ var config_data = `
       "type": "text",
       "size": 50,
       "maxSize": 250,
+      "required": "true"
     }
   ],
   "teleop": [
