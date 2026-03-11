@@ -8,7 +8,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2025BCVI",
+      "defaultValue": "2026BCVI",
       "required": "true"
     },
     { "name": "Scouter Name",
