@@ -8,7 +8,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2026BCVI",
+      "defaultValue": "2026ONOSH",
       "required": "true"
     },
     { "name": "Scouter Name",
